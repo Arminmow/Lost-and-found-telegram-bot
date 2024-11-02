@@ -6,9 +6,9 @@ from config import BOT_TOKEN
 # /start command - welcomes the user
 async def start(update: Update , context : CallbackContext):
     user_id = update.effective_user.id
-    
+    username = update.effective_user.username
     is_member = await check_channel_membership(user_id, context)
-    print(f"User ID: {user_id}, Is Member: {is_member}")
+    print(f"User ID: {username}, Is Member: {is_member}")
 
 
     if is_member:
